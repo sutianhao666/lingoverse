@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LingoVerse - 多语种在线学习平台</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- 导航栏 -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo" onclick="App.navigate('home')">
+        <span class="logo-icon">🌐</span>
+        <span class="logo-text">LingoVerse</span>
+      </div>
+      <div class="nav-links" id="navLinks">
+        <a href="#" data-page="home" onclick="App.navigate('home');return false;">首页</a>
+        <a href="#" data-page="courses" onclick="App.navigate('courses');return false;">课程</a>
+        <a href="#" data-page="community" onclick="App.navigate('community');return false;">社区</a>
+        <a href="#" data-page="profile" onclick="App.navigate('profile');return false;">我的</a>
+      </div>
+      <div class="nav-user" id="navUser"></div>
+      <button class="mobile-menu-btn" onclick="document.getElementById('navLinks').classList.toggle('show')">☰</button>
+    </div>
+  </nav>
+
+  <!-- 主内容区 -->
+  <main id="app"></main>
+
+  <!-- 模态框 -->
+  <div class="modal-overlay" id="modal" onclick="if(event.target===this)App.closeModal()">
+    <div class="modal-content" id="modalContent"></div>
+  </div>
+
+  <!-- Toast 提示 -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- 成就解锁动画 -->
+  <div class="achievement-popup" id="achievementPopup">
+    <div class="achievement-inner">
+      <div class="achievement-icon" id="achIcon">🏆</div>
+      <div class="achievement-text">
+        <div class="achievement-title">成就解锁！</div>
+        <div class="achievement-name" id="achName"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/app.js"></script>
+  <script src="/js/pages.js"></script>
+  <script src="/js/learning.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>
